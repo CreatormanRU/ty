@@ -6,7 +6,7 @@ pygame.mixer.init()  # для звука
 
 W = 1400  # ширина игрового окна
 H = 900 # высота игрового окна
-FPS = 120 # частота кадров в секунду
+FPS = 60 # частота кадров в секунду
 
 # Цвета (R, G, B)
 BLACK = (0, 0, 0)
@@ -22,22 +22,20 @@ DBLUE = (0, 0, 150)
 
 #sc = pygame.display.set_mode((W, H))
 sc = pygame.display.set_mode((W,H), pygame.FULLSCREEN | pygame.SCALED)
-pygame.display.set_caption("Colorful world")
+pygame.display.set_caption("Your only move is TAUNT")
 clock = pygame.time.Clock()
 
 running = True
-scene = "BOOTup"
+scene = "menu"
 
 
 
 while running:
-    while scene == "BOOTup": #LOADING
+    while scene == "menu": #Main_menu
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
         bt = pygame.key.get_pressed()
-        if bt[pygame.K_SPACE]:
-            scene = "SafeMode/SafeBoot"
         if bt[pygame.K_ESCAPE]:
             exit()
             
